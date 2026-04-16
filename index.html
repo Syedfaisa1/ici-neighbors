@@ -471,11 +471,11 @@
         { name: "GRANADA", icon: "granada.png", goal: 150000, raised: 1000, iframeLink:"https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/granada-hills" },
         
         // PAGE 2 (The Next 5)
-        { name: "ANDALUS PHASE II", goal: 42800, raised: 15000 },      
-        { name: "ICI SOUTH", goal: 150000, raised: 2000 },
-        { name: "TUSCANY", goal: 150000, raised: 1000, iframeLink: "" }, // No logo specified for Tuscany yet
-        { name: "LAKE VIEW", goal: 150000, raised: 85000 },  
-        { name: "WILDBRIAR", goal: 150000, raised: 85000 },  
+        // { name: "ANDALUS PHASE II", goal: 42800, raised: 15000 },      
+        // { name: "ICI SOUTH", goal: 150000, raised: 2000 },
+        // { name: "TUSCANY", goal: 150000, raised: 1000, iframeLink: "" }, 
+        // { name: "LAKE VIEW", goal: 150000, raised: 85000 },  
+        // { name: "WILDBRIAR", goal: 150000, raised: 85000 },  
     ];
 
     // 2. Countdown Timer Logic
@@ -562,19 +562,35 @@
     renderAllCardsOnce();
 
     // 4. AUTO-ROTATE EVERY 15 SECONDS
-    setInterval(() => {
-        const oldPage = document.getElementById(`page-${currentPage}`);
-        oldPage.classList.remove('active');
+    // setInterval(() => {
+    //     const oldPage = document.getElementById(`page-${currentPage}`);
+    //     oldPage.classList.remove('active');
 
-        currentPage++; 
-        if (currentPage >= totalPages) {
-            currentPage = 0; 
-        }
+    //     currentPage++; 
+    //     if (currentPage >= totalPages) {
+    //         currentPage = 0; 
+    //     }
         
-        const newPage = document.getElementById(`page-${currentPage}`);
-        newPage.classList.add('active');
+    //     const newPage = document.getElementById(`page-${currentPage}`);
+    //     newPage.classList.add('active');
 
-    }, 15000); 
+    // }, 15000); 
+    // 4. AUTO-ROTATE EVERY 15 SECONDS (Only if there is more than 1 page!)
+    if (totalPages > 1) {
+        setInterval(() => {
+            const oldPage = document.getElementById(`page-${currentPage}`);
+            oldPage.classList.remove('active');
+
+            currentPage++; 
+            if (currentPage >= totalPages) {
+                currentPage = 0; 
+            }
+            
+            const newPage = document.getElementById(`page-${currentPage}`);
+            newPage.classList.add('active');
+
+        }, 15000); 
+    }
 
 </script>
 
