@@ -29,7 +29,7 @@
             height: 100vh;
             width: 100vw;
             overflow: hidden; 
-            padding: 1.5vh 1.5vw; /* Restored original spacing */
+            padding: 1.5vh 1.5vw; 
             display: flex;
         }
 
@@ -38,13 +38,13 @@
             height: 100%; 
             display: flex;
             flex-direction: column;
-            gap: 1.5vh; /* Restored gaps */
+            gap: 1.5vh; 
         }
 
         /* --- ROW 1: Logo + Ticker + Countdown --- */
         .top-row {
             display: flex;
-            gap: 1.5vw; /* Restored gaps */
+            gap: 1.5vw; 
             height: 12vh;
             min-height: 90px;
         }
@@ -53,8 +53,8 @@
             display: flex;
             flex-grow: 1; 
             background-color: #ffffff;
-            border-radius: 12px; /* Restored rounded corners */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Restored shadow */
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
             overflow: hidden; 
         }
 
@@ -97,8 +97,8 @@
         .countdown-timer {
             padding: 0 2.5vw; 
             background-color: #ffffff;
-            border-radius: 12px; /* Restored rounded corners */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Restored shadow */
+            border-radius: 12px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,22 +108,21 @@
             color: #000000;
             letter-spacing: -2px;
             white-space: nowrap;
-            /* Fixes the shrinking issue */
             font-variant-numeric: tabular-nums; 
         }
 
         /* --- ROW 2: Main Progress + QR Box --- */
         .summary-row {
             display: flex;
-            gap: 1.5vw; /* Restored gaps */
+            gap: 1.5vw; 
             height: 18vh; 
             min-height: 130px;
         }
 
         .iframe-cropper {
             background-color: var(--teal-box); 
-            border-radius: 12px; /* Restored rounded corners */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Restored shadow */
+            border-radius: 12px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
             flex: 1.6; 
             position: relative;
             overflow: hidden; 
@@ -144,8 +143,8 @@
         .join-team-box {
             flex: 1; 
             background-color: var(--teal-box);
-            border-radius: 12px; /* Restored rounded corners */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Restored shadow */
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
             padding: 0 3vw;
             display: flex;
             align-items: center;
@@ -191,7 +190,7 @@
             height: 100%;
             display: flex; 
             flex-direction: column;
-            gap: 1vh; /* Restored gaps between rows */
+            gap: 1vh; 
             opacity: 0; 
             visibility: hidden;
             transition: opacity 0.8s ease-in-out; 
@@ -203,25 +202,36 @@
             visibility: visible;
             z-index: 2;
         }
-  
+
         .team-card-row {
             background-color: #ffffff;
             border-radius: 8px; 
-            border: 1px solid #d1d5db; /* Restored border */
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02); /* Restored shadow */
+            border: 1px solid #d1d5db; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02); 
             display: flex;
             align-items: center;
             flex: 1; 
             overflow: hidden;
         }
 
+        /* --- UPDATED: Team Logo & Name Alignment --- */
         .team-card-name {
             width: 32%; 
             padding-left: 2vw;
-            font-size: clamp(1.8rem, 3vw, 3.5rem);
+            font-size: clamp(1.6rem, 2.8vw, 3.2rem); /* Slightly shrunk text to fit logos nicely */
             font-weight: 900;
             text-transform: uppercase;
             color: #000000;
+            /* Flex layout to handle logos */
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+
+        .team-logo {
+            height: clamp(35px, 5vh, 60px);
+            width: auto;
+            object-fit: contain;
         }
 
         .team-card-bar {
@@ -229,7 +239,7 @@
             height: 100%;
             background-color: #e5ebf0; 
             position: relative;
-            border-left: 1px solid #d1d5db; /* Restored border */
+            border-left: 1px solid #d1d5db; 
         }
 
         .card-iframe-cropper {
@@ -255,7 +265,7 @@
             pointer-events: none;
             transform-origin: top left;
             transform: scale(0.60);
-            top: -120px; /*121px*/
+            top: -120px; 
             left: -130px; 
         }
 
@@ -263,8 +273,8 @@
         .footer {
             background-color: #ffffff;
             color: #000000;
-            border-radius: 12px; /* Restored rounded corners */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Restored shadow */
+            border-radius: 12px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
             padding: 1vh 2vw;
             display: flex;
             justify-content: space-between;
@@ -275,7 +285,7 @@
         .footer-divider {
             width: 1px;
             height: clamp(30px, 4vh, 50px);
-            background-color: #d1d5db; /* Restored divider color */
+            background-color: #d1d5db; 
             margin: 0 1vw;
         }
 
@@ -355,8 +365,12 @@
             }
             .team-card-name {
                 width: 40%;
-                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+                font-size: clamp(0.85rem, 3vw, 1.2rem);
                 padding-left: 10px;
+                gap: 8px; /* Slightly tighter gap on mobile */
+            }
+            .team-logo {
+                height: clamp(20px, 3.5vh, 35px); /* Scale logos down for mobile */
             }
             .card-iframe-cropper iframe {
                 transform: scale(0.42);
@@ -446,21 +460,25 @@
 </div>
 
 <script>
-    // 1. ALL 10 TEAMS DATA
+    // 1. ALL 10 TEAMS DATA (Added 'icon' properties for the 5 logos)
     const teamsData = [
-        { name: "ANDALUS", goal: 150000, raised: 15000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/voa-phase-1-team" },
-        { name: "ICI EASTSIDE", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/ici-eastside-residents" },
-        { name: "GRANADA", goal: 150000, raised: 1000, iframeLink:"https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/granada-hills" },
-        { name: "AL-HAMRA", goal: 150000, raised: 1000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/al-hamra-team" },
-        { name: "TUSCANY", goal: 150000, raised: 1000, iframeLink: "" },
+        // PAGE 1
+        { name: "ANDALUS", icon: "voa-p1.png", goal: 150000, raised: 15000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/voa-phase-1-team" },
+        { name: "ICI EASTSIDE", icon: "waqfeast.png", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/ici-eastside-residents" },
+        { name: "GRANADA", icon: "granada.png", goal: 150000, raised: 1000, iframeLink:"https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/granada-hills" },
+        { name: "AL-HAMRA", icon: "alhamra.png", goal: 150000, raised: 1000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/al-hamra-team" },
+        { name: "VALENCIA", icon: "valencia.png", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/valencia-team" },
+       
+        
+        // PAGE 2 (The Next 5)
         { name: "ANDALUS PHASE II", goal: 42800, raised: 15000 },      
         { name: "ICI SOUTH", goal: 150000, raised: 2000 },
-        { name: "VALENCIA", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/valencia-team" },
+        { name: "TUSCANY", goal: 150000, raised: 1000, iframeLink: "" }, // No logo specified for Tuscany yet
         { name: "LAKE VIEW", goal: 150000, raised: 85000 },  
         { name: "WILDBRIAR", goal: 150000, raised: 85000 },  
     ];
 
-    // 2. Countdown Timer Logic (Updated to pad single digits with 0)
+    // 2. Countdown Timer Logic
     function updateCountdown() {
         const targetDate = new Date("May 30, 2026 00:00:00 EDT").getTime();
         const now = new Date().getTime();
@@ -472,8 +490,6 @@
         }
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        
-        // padStart forces single digits to have a leading zero (e.g., '9' becomes '09')
         const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
         const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
         const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
@@ -502,6 +518,11 @@
             pageTeams.forEach(team => {
                 let progressBarHTML = '';
                 
+                // Construct the logo image tag if the team has an icon
+                const logoHTML = team.icon 
+                    ? `<img src="${team.icon}" alt="${team.name} Logo" class="team-logo">` 
+                    : '';
+                
                 if (team.iframeLink) {
                     progressBarHTML = `
                         <div class="card-iframe-cropper">
@@ -521,7 +542,10 @@
 
                 html += `
                     <div class="team-card-row">
-                        <div class="team-card-name">${team.name}</div>
+                        <div class="team-card-name">
+                            ${logoHTML}
+                            <span>${team.name}</span>
+                        </div>
                         <div class="team-card-bar">
                             ${progressBarHTML}
                         </div>
