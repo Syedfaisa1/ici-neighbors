@@ -251,11 +251,11 @@
             position: absolute;
             width: 2500px;
             height: 1000px;
-            border: none;
+            border: none; 
             pointer-events: none;
             transform-origin: top left;
             transform: scale(0.60);
-            top: -122px; 
+            top: -120px; /*121px*/
             left: -130px; 
         }
 
@@ -448,16 +448,16 @@
 <script>
     // 1. ALL 10 TEAMS DATA
     const teamsData = [
-        { name: "ANDALUS", goal: 150000, raised: 15000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/team-andalus-phase-i-loyalty-in-action" },
+        { name: "ANDALUS", goal: 150000, raised: 15000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/voa-phase-1-team" },
         { name: "ICI EASTSIDE", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/ici-eastside-residents" },
-        { name: "GRANADA", goal: 150000, raised: 1000 },
-        { name: "AL-HAMRA", goal: 150000, raised: 1000 },
-        { name: "TUSCANY", goal: 150000, raised: 1000 },
-        { name: "ANDALUS PHASE II", goal: 42800, raised: 15000 },
+        { name: "GRANADA", goal: 150000, raised: 1000, iframeLink:"https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/granada-hills" },
+        { name: "AL-HAMRA", goal: 150000, raised: 1000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/al-hamra-team" },
+        { name: "TUSCANY", goal: 150000, raised: 1000, iframeLink: "" },
+        { name: "ANDALUS PHASE II", goal: 42800, raised: 15000 },      
         { name: "ICI SOUTH", goal: 150000, raised: 2000 },
-        { name: "LAKE VIEW", goal: 150000, raised: 85000 },
-        { name: "WILDBRIAR", goal: 150000, raised: 85000 },
-        { name: "VALENCIA", goal: 150000, raised: 85000 }
+        { name: "VALENCIA", goal: 150000, raised: 85000, iframeLink: "https://secure.givelively.org/teams/ici-waqf/ici-waqf-multiple-your-rewards-this-ramadan-with-sadaqah-jariyah/valencia-team" },
+        { name: "LAKE VIEW", goal: 150000, raised: 85000 },  
+        { name: "WILDBRIAR", goal: 150000, raised: 85000 },  
     ];
 
     // 2. Countdown Timer Logic (Updated to pad single digits with 0)
